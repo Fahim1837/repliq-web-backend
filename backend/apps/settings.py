@@ -13,9 +13,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-=@z2$t_mb%yej745u@^#po4)djwuc4=gw^e_g21nr^h82vzu@0'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '127.0.0.1',  
+    'localhost',  
+    'repliq-web-backend.onrender.com',  # Render domain
+]
+
 
 
 # Application definition
