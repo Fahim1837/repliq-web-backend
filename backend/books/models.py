@@ -8,14 +8,14 @@ class BookCategory(models.Model):
     created_at = models.DateTimeField(auto_now_add= True)
 
 
-class Books (models.Model):
-    name = models.CharField(max_length= 255, blank= False, null= True)
+class Book (models.Model):
+    name = models.CharField(max_length= 255, blank= False, null= False)
     author = models.CharField(max_length=255, blank=True, null= True)
-    category = models.ForeignKey (BookCategory, on_delete= models.CASCADE, related_name="books")
-    created_by = models.ForeignKey(User, on_delete= models.CASCADE, related_name="books_created")
+    category = models.ForeignKey (BookCategory, on_delete= models.CASCADE, related_name="book")
+    created_by = models.ForeignKey(User, on_delete= models.CASCADE, related_name="book_created")
     created_at = models.DateTimeField(auto_now_add= True)
-    updated_by = models.ForeignKey(User, on_delete= models.CASCADE, related_name="books_updated")
+    updated_by = models.ForeignKey(User, on_delete= models.CASCADE, related_name="book_updated")
     updated_at = models.DateTimeField(auto_now= True)
     
     class Meta:
-        db_table = "books"
+        db_table = "book"
